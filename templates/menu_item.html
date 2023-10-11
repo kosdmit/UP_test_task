@@ -1,0 +1,11 @@
+<li>
+    <a href="{{ item.url }}">{{ item.title }}</a>
+    {% if item.children and item.is_active %}
+        <ul>
+            {% for child in item.children %}
+                {% include "menu_item.html" with item=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
+
